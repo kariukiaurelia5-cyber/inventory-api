@@ -4,6 +4,10 @@ from services.openfoodfacts import fetch_product
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return {"message": "Inventory API is running"}
+
 # GET ALL
 @app.route('/inventory', methods=['GET'])
 def get_inventory():
